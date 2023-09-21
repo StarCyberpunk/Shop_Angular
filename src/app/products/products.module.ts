@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProguctItemComponent } from './proguct-item/proguct-item.component';
+import { ProductItemComponent } from './product-item/product-item.component';
+import {RouterLink} from "@angular/router";
 
 
 
 @NgModule({
     declarations: [
-        ProguctItemComponent
+        ProductItemComponent
     ],
     exports: [
-        ProguctItemComponent
+        ProductItemComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        RouterLink
     ]
 })
 export class ProductsModule { }

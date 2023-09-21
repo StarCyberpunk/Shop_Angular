@@ -2,7 +2,7 @@
 
 <div class="card">
   <img [src]="product.image" [alt]="product.title" >
-  <h2 class="title">{{product.title}}</h2>
+  <a class="title" [routerLink]="['about', product.id]" >{{product.title}}</a>
   <p>Цена:<span style="font-weight: 700" >{{product.price| currency:'RUB '}}</span></p>
   <p></p>
 </div>
