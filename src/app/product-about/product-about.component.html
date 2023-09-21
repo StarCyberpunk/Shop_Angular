@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <img [src]="product.image" [alt]="product.title" >
+  <div><p class="title" routerLink="">{{product.title}}</p>
+    <p>Цена:<span style="font-weight: 700" >{{product.price| currency:'RUB '}}</span></p>
+    <button >Купить</button>
+  </div>
+
+</div>
+
