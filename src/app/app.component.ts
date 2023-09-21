@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {IProduct} from "./models/product";
-import {products as data} from "./data/products";
+import {IProduct} from "./products/models/product";
+import {products as data} from "./products/data/products";
 
 @Component({
   selector: 'app-root',

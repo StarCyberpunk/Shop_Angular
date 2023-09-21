@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavItemComponent } from './nav-item/nav-item.component';
+import {RouterLink} from "@angular/router";
 
 
 
@@ -12,7 +13,8 @@ import { NavItemComponent } from './nav-item/nav-item.component';
     NavItemComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterLink
   ]
 })
 export class NavigateModule { }

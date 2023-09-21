@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import {CartsModule} from "./carts/carts.module";
+import { AppRoutingModule } from './app-routing.module';
 import {NavigateModule} from "./navigate/navigate.module";
-import {ProductsModule} from "./products/products.module";
+
 
 @NgModule({
   declarations: [
@@ -12,9 +12,8 @@ import {ProductsModule} from "./products/products.module";
   ],
   imports: [
     BrowserModule,
-    CartsModule,
-    NavigateModule,
-    ProductsModule
+    AppRoutingModule,
+    NavigateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

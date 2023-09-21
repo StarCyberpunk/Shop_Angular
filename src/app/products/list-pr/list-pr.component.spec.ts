@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CartItemComponent } from './cart-item.component';
+import { ListPrComponent } from './list-pr.component';
 
-describe('CartItemComponent', () => {
-  let component: CartItemComponent;
-  let fixture: ComponentFixture<CartItemComponent>;
+describe('ListPrComponent', () => {
+  let component: ListPrComponent;
+  let fixture: ComponentFixture<ListPrComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CartItemComponent]
+      declarations: [ListPrComponent]
     });
-    fixture = TestBed.createComponent(CartItemComponent);
+    fixture = TestBed.createComponent(ListPrComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
