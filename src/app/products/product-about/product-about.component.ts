@@ -1,7 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IProduct} from "../products/models/product";
+import {IProduct} from "../models/product";
 import {ActivatedRoute, ParamMap} from "@angular/router";
-import {products} from "../products/data/products";
+import {products} from "../data/products";
+import {HttpClientModule} from "@angular/common/http";
+import {ProductsService} from "../../services/products.service";
 
 
 @Component({
@@ -12,11 +14,14 @@ import {products} from "../products/data/products";
 export class ProductAboutComponent implements OnInit {
   id: number
   product:IProduct
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,private productsService:ProductsService) {}
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = parseInt(<string>params.get('id'))
-      this.product=products[this.id-1]
+
+    })
+    this.productsService.getSingle(this.id).subscribe(p=>{
+      this.product=p
     })
   }
 

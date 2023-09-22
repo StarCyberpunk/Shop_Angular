@@ -7,7 +7,7 @@ import {products as data} from "./products/data/products";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'Shop';
-  products:IProduct[]=data
+  basket:IProduct[]= []
 }
