@@ -5,9 +5,9 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./app.module').then((m)  => m.AppModule)
   },*/
-  { path: 'cart', loadChildren: () => import('./orders/orders.module').then((m) => m.OrdersModule) },
-  { path: '', loadChildren: () => import('./products/list-pr/list-pr.module').then(m => m.ListPrModule) },
-  { path: 'about/:id', loadChildren: () => import('./products/product-about/product-about.module').then(m => m.ProductAboutModule) },
+  { path: 'cart', loadChildren: () => import('./features/orders/orders.module').then((m) => m.OrdersModule) },
+  { path: '', loadChildren: () => import('./features/products/list-pr/list-pr.module').then(m => m.ListPrModule) },
+  { path: 'about/:id', loadChildren: () => import('./features/products/product-about/product-about.module').then(m => m.ProductAboutModule) },
 
 ];
 @NgModule({

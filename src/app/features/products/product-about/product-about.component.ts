@@ -3,8 +3,8 @@ import {IProduct} from "../models/product";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {products} from "../data/products";
 import {HttpClientModule} from "@angular/common/http";
-import {ProductsService} from "../../services/products.service";
-import {CartService} from "../../services/cart.service";
+import {ProductsService} from "../../../core/services/products.service";
+import {CartService} from "../../../core/services/cart.service";
 
 
 @Component({
