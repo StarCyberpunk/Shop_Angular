@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of products|async">
   <div class="card">
     <img [src]="product.image" [alt]="product.title" >
     <a class="title" [routerLink]="['about', product.id]" >{{product.title}}</a>

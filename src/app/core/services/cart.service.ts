@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {IProduct} from "../../features/models/product";
+import {ICart} from "../../features/models/cart";
 
 
 @Injectable(
@@ -9,14 +10,11 @@ import {IProduct} from "../../features/models/product";
     providedIn:'root'
   })
 export class CartService{
-   cart_id_mas:number[]=[]
-  constructor() {
-  }
-  addProduct(id:number){
-    this.cart_id_mas.push(id)
-  }
-  getCart():number[]{
-    return  this.cart_id_mas
+   cart:ICart
+  constructor() {this.cart={products:new Array<IProduct>()}}
+  addProduct(product:Observable<IProduct>){
+     product.subscribe(m=>this.cart.products.push(m))
+    console.log(this.cart.products)
   }
 
 }

@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {CartService} from "../../core/services/cart.service";
 import {ProductsService} from "../../core/services/products.service";
 import {IProduct} from "../models/product";
+import {ICart} from "../models/cart";
 
 @Component({
   selector: 'app-orders',
@@ -9,14 +10,10 @@ import {IProduct} from "../models/product";
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent {
-  item:number[]
+  item:ICart
   cart:IProduct[]
-  constructor(CartService:CartService,ProductSer:ProductsService) {
-    this.item=CartService.getCart()
-    for (let el of this.item) {
-      ProductSer.getSingle(el).subscribe(p=>{this.cart.push(p)})
-
-    }
+  constructor(cartService:CartService,productSer:ProductsService) {
+    this.cart=cartService.cart.products
   }
 
 }
