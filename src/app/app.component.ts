@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {IProduct} from "./features/products/models/product";
-import {products as data} from "./features/products/data/products";
+import {IProduct} from "./features/models/product";
 
 @Component({
   selector: 'app-root',
@@ -9,5 +8,4 @@ import {products as data} from "./features/products/data/products";
 })
 export class AppComponent  {
   title = 'Shop';
-  basket:IProduct[]= []
 }

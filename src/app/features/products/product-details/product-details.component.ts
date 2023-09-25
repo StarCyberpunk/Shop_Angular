@@ -1,18 +1,18 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IProduct} from "../models/product";
+import {IProduct} from "../../models/product";
 import {ActivatedRoute, ParamMap} from "@angular/router";
-import {products} from "../data/products";
+
 import {HttpClientModule} from "@angular/common/http";
 import {ProductsService} from "../../../core/services/products.service";
 import {CartService} from "../../../core/services/cart.service";
 
 
 @Component({
-  selector: 'app-product-about',
-  templateUrl: './product-about.component.html',
-  styleUrls: ['./product-about.component.css']
+  selector: 'app-product-details',
+  templateUrl: './product-details.component.html',
+  styleUrls: ['./product-details.component.css']
 })
-export class ProductAboutComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit {
   id: number
   product:IProduct
   constructor(private route: ActivatedRoute,private productsService:ProductsService,private cartServices:CartService) {}
