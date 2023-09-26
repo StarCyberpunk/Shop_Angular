@@ -10,11 +10,7 @@ import {IProduct} from "../../features/models/product";
   })
 export class ProductsService{
   constructor(private http:HttpClient) {}
-    getAll():Observable<IProduct[]>{
-     return  this.http.get<IProduct[]>('https://fakestoreapi.com/products')
-    }
-    getSingle(id:number):Observable<IProduct>{
-    return  this.http.get<IProduct>('https://fakestoreapi.com/products/'+id)
-    }
+    getAll():Observable<IProduct[]>{return  this.http.get<IProduct[]>('https://fakestoreapi.com/products')}
+    getSingle(id:number):Observable<IProduct>{return  this.http.get<IProduct>('https://fakestoreapi.com/products/'+id)}
 
 }

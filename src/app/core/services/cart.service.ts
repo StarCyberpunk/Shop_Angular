@@ -14,7 +14,11 @@ export class CartService{
   constructor() {this.cart={products:new Array<IProduct>()}}
   addProduct(product:Observable<IProduct>){
      product.subscribe(m=>this.cart.products.push(m))
-    console.log(this.cart.products)
+
   }
+
+  /*delProduct(pr:IProduct){
+     this.cart.products
+  }*/
 
 }

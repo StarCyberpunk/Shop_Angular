@@ -10,10 +10,16 @@ import {ICart} from "../models/cart";
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent {
-  item:ICart
+
+  total:number=0
   cart:IProduct[]
   constructor(cartService:CartService,productSer:ProductsService) {
     this.cart=cartService.cart.products
   }
+  ngOnInit():void{
+    this.cart.map(m=>this.total+= m.price)
+  }
+  deleteProduct(){
 
+  }
 }
