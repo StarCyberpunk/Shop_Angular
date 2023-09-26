@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IProduct} from "../../models/product";
 import {ActivatedRoute, ParamMap} from "@angular/router";
-import {HttpClientModule} from "@angular/common/http";
 import {ProductsService} from "../../../core/services/products.service";
 import {CartService} from "../../../core/services/cart.service";
 import {Observable} from "rxjs";
@@ -17,8 +16,5 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute,private productsService:ProductsService,private cartServices:CartService) {}
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {this.id = parseInt(<string>params.get('id'))}).unsubscribe()
-    this.product$=this.productsService.getSingle(this.id)
-  }
-  add(){this.cartServices.addProduct(this.product$)}
-
-}
+    this.product$=this.productsService.getSingle(this.id)}
+  add(prd:IProduct){this.cartServices.addProduct(prd)}}

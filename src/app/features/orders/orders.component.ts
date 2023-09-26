@@ -1,8 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {CartService} from "../../core/services/cart.service";
-import {ProductsService} from "../../core/services/products.service";
 import {IProduct} from "../models/product";
-import {ICart} from "../models/cart";
 
 @Component({
   selector: 'app-orders',
@@ -10,14 +8,9 @@ import {ICart} from "../models/cart";
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent {
-
   total:number=0
   cart:Array<IProduct>
-  constructor(cartService:CartService) {
-    this.cart=cartService.cart.products
-  }
-  ngOnInit():void{
-    this.cart.map(m=>this.total+= m.price)
-  }
-
-}
+  cartService:CartService
+  constructor(cartService:CartService) {this.cartService=cartService;this.cart=cartService.cart.products}
+  ngOnInit():void{this.cart.map(m=>this.total+= m.price)}
+  delProduct(i:number){this.cartService.delProduct(i)}}

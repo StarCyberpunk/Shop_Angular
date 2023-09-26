@@ -2,15 +2,8 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {IProduct} from "../../features/models/product";
-
-
-@Injectable(
-  {
-    providedIn:'root'
-  })
+@Injectable({providedIn:'root'})
 export class ProductsService{
   constructor(private http:HttpClient) {}
     getAll():Observable<IProduct[]>{return  this.http.get<IProduct[]>('https://fakestoreapi.com/products')}
-    getSingle(id:number):Observable<IProduct>{return  this.http.get<IProduct>('https://fakestoreapi.com/products/'+id)}
-
-}
+    getSingle(id:number):Observable<IProduct>{return  this.http.get<IProduct>('https://fakestoreapi.com/products/'+id)}}
