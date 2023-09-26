@@ -19,8 +19,6 @@ export class ProductDetailsComponent implements OnInit {
     this.route.paramMap.subscribe((params: ParamMap) => {this.id = parseInt(<string>params.get('id'))}).unsubscribe()
     this.product$=this.productsService.getSingle(this.id)
   }
-  add(){
-    this.cartServices.addProduct(this.product$)
-  }
+  add(){this.cartServices.addProduct(this.product$)}
 
 }

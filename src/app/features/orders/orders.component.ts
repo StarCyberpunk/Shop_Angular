@@ -12,14 +12,12 @@ import {ICart} from "../models/cart";
 export class OrdersComponent {
 
   total:number=0
-  cart:IProduct[]
-  constructor(cartService:CartService,productSer:ProductsService) {
+  cart:Array<IProduct>
+  constructor(cartService:CartService) {
     this.cart=cartService.cart.products
   }
   ngOnInit():void{
     this.cart.map(m=>this.total+= m.price)
   }
-  deleteProduct(){
 
-  }
 }

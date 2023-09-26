@@ -10,15 +10,15 @@ import {ICart} from "../../features/models/cart";
     providedIn:'root'
   })
 export class CartService{
+
    cart:ICart
   constructor() {this.cart={products:new Array<IProduct>()}}
   addProduct(product:Observable<IProduct>){
-     product.subscribe(m=>this.cart.products.push(m))
-
+    window.alert('Your product has been added to the cart!');
+    this.cart.products.push()
+    product.subscribe(m=>this.cart.products.push(m))
   }
-
-  /*delProduct(pr:IProduct){
-     this.cart.products
-  }*/
-
+  delProduct(product:IProduct){
+     this.cart.products.splice(0,1,product)
+  }
 }

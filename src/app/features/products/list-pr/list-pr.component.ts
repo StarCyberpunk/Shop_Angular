@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {IProduct} from "../../models/product";
 import {ProductsService} from "../../../core/services/products.service";
 import {Observable} from "rxjs";
